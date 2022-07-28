@@ -2,6 +2,7 @@
 // eventually we'll add an array of toy sub docs
 
 const mongoose = require('mongoose')
+const toySchema = require('./toy')
 
 const { Schema, model } = mongoose
 
@@ -19,6 +20,7 @@ const petSchema = new Schema(
             type: String,
             required: true
         },
+        toys: [toySchema],
         owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
